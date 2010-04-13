@@ -1,3 +1,5 @@
+package fuzzer.preferences;
+
 import java.awt.Component;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -5,9 +7,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import org.openstreetmap.josm.Main;
+import org.openstreetmap.josm.tools.GBC;
 
 public class EditToolDialog extends JDialog {
     ExtTool tool;
@@ -32,9 +37,9 @@ public class EditToolDialog extends JDialog {
         tool.name = name.getText();
         tool.cmdline = cmdline.getText();
     }
-    public EditToolDialog(JFrame parent,ExtTool tool)
+    public EditToolDialog(ExtTool tool)
     {
-        super(parent,"Edit tool",true);
+        super(JOptionPane.getFrameForComponent(Main.parent),"Edit tool",true);
         this.tool = tool;
         setLayout(new GridBagLayout());
         addLabelled("Name:", name);

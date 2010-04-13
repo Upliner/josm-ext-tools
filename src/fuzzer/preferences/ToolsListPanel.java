@@ -1,3 +1,5 @@
+package fuzzer.preferences;
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -44,7 +46,7 @@ public class ToolsListPanel extends JPanel {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {
                     //JOptionPane.showMessageDialog(null, tool.getName() + " edited!");
-                    JDialog dlg = new EditToolDialog(null, tool);
+                    JDialog dlg = new EditToolDialog(tool);
                     dlg.setVisible(true);
                     dlg.dispose();
                     refresh();
@@ -63,7 +65,7 @@ public class ToolsListPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 ExtTool tool = new ExtTool();
-                JDialog dlg = new EditToolDialog(null, tool);
+                JDialog dlg = new EditToolDialog(tool);
                 dlg.setVisible(true);
                 dlg.dispose();
                 if (tool.name != null)

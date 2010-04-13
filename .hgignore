@@ -1,0 +1,6 @@
+syntax: glob
+
+.settings/
+bin/
+dist/
+josm/
